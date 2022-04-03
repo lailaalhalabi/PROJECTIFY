@@ -1,23 +1,45 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { KeyboardAvoidingView, Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import Home from "./screens/Home";
+import Onboarding from "./screens/Onboarding";
+import Projects from "./screens/Projects";
+import Question from "./screens/Question";
+import SignIn from "./screens/SignIn";
+import SignUp from "./screens/SignUp";
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+/**
+ * This is the root/entry point of the application.
+ * @returns {React.ReactNode}
+ */
+function App() {
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-        <Text>Projectify App!</Text>
-        <StatusBar style="auto" />
-      </View>
+      <SafeAreaProvider>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0}
+          style={{ flex: 1 }}
+        >
+          <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen name="Onboarding" component={Onboarding} />
+            <Stack.Screen name="Question" component={Question} />
+            <Stack.Screen name="Projects" component={Projects} />
+            <Stack.Screen name="SignIn" component={SignIn} />
+            <Stack.Screen name="SignUp" component={SignUp} />
+          </Stack.Navigator>
+        </KeyboardAvoidingView>
+      </SafeAreaProvider>
     </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default App;
