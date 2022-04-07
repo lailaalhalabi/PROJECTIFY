@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <SafeAreaView style={theme.container}>
       <View>
-        <StatusBar style="auto" />
+        {/* <StatusBar style="dark" /> */}
         <Text>Home screen</Text>
       </View>
     </SafeAreaView>
