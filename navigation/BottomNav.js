@@ -90,7 +90,7 @@ const theme = StyleSheet.create({
     right: 0,
     left: 0,
     borderRadius: 30,
-    shadowColor: globalTheme.colors.primaryColor,
+    shadowColor: globalTheme.colors.primary,
     shadowOpacity: 0.1,
   },
   tabButton: {
@@ -107,6 +107,6 @@ const theme = StyleSheet.create({
     paddingTop: 10,
     marginHorizontal: 25,
     borderTopWidth: 5,
-    borderTopColor: globalTheme.colors.primaryColor,
+    borderTopColor: globalTheme.colors.primary,
   },
 });
