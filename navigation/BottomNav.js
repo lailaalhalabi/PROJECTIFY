@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
+import { TouchableOpacity, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { globalTheme } from "../components/globalTheme";
 import HomeIcon from "../assets/icons/home.png";
 import HomeIconActive from "../assets/icons/home-active.png";
 import ProjectIcon from "../assets/icons/project.png";
@@ -41,6 +43,20 @@ const tabItems = [
 
 const Tab = createBottomTabNavigator();
 
+const TabButton = (props) => {
+  const { item, onPress, accessibilityState } = props;
+  const focused = accessibilityState.selected;
+
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      style={focused ? theme.tabButtonActive : theme.tabButton}
+    >
+      <Image source={focused ? item.activeIcon : item.inactiveIcon} />
+    </TouchableOpacity>
+  );
+};
+
 const BottomNav = () => {
   return (
     <Tab.Navigator
@@ -51,7 +67,14 @@ const BottomNav = () => {
       }}
     >
       {tabItems.map((item, index) => (
-        <Tab.Screen key={index} name={item.screen} component={item.component} options={} />
+        <Tab.Screen
+          key={index}
+          name={item.screen}
+          component={item.component}
+          options={{
+            tabBarButton: (props) => <TabButton {...props} item={item} />,
+          }}
+        />
       ))}
     </Tab.Navigator>
   );
@@ -61,12 +84,29 @@ export default BottomNav;
 
 const theme = StyleSheet.create({
   container: {
-    height: 85,
+    height: 95,
     position: "absolute",
     bottom: 0,
     right: 0,
     left: 0,
     borderRadius: 30,
-    shadowColor: "#0961F5",
+    shadowColor: globalTheme.colors.primaryColor,
+    shadowOpacity: 0.1,
+  },
+  tabButton: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 10,
+    marginHorizontal: 25,
+  },
+  tabButtonActive: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 10,
+    marginHorizontal: 25,
+    borderTopWidth: 5,
+    borderTopColor: globalTheme.colors.primaryColor,
   },
 });
