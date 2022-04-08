@@ -1,12 +1,16 @@
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import PlusIcon from "../assets/icons/plus-icon.png";
 import Project1 from "../assets/images/project1.jpg";
 import Project2 from "../assets/images/project2.jpg";
 import Project3 from "../assets/images/project3.jpg";
+import PythonImage from "../assets/images/python.png";
 import UserProfileImage from "../assets/images/user6.jpg";
 import { globalTheme } from "../components/globalTheme";
 import PopularProject from "../components/PopularProject";
+import RecentProject from "../components/RecentProject";
 
 const Home = () => {
   // Load custom fonts
@@ -21,7 +25,7 @@ const Home = () => {
     return <Text>Loading...</Text>;
   }
   return (
-    <View style={theme.container}>
+    <ScrollView style={theme.container} showsVerticalScrollIndicator={false}>
       <StatusBar style="auto" />
 
       <View style={theme.topNav}>
@@ -63,7 +67,23 @@ const Home = () => {
         </View>
         <Text style={theme.linkText}>View all</Text>
       </View>
-    </View>
+
+      <View style={theme.recentProjectContainer}>
+        <RecentProject
+          title="100 Python challenges"
+          text1="Gain fundamental understanding"
+          text2="100 days"
+          text3="8 members"
+          mainIcon={PythonImage}
+        />
+      </View>
+
+      <View style={theme.createNewProjectContainer}>
+        <TouchableOpacity style={theme.createNewProject}>
+          <Image source={PlusIcon} />
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -73,9 +93,9 @@ export default Home;
 const theme = StyleSheet.create({
   container: {
     backgroundColor: globalTheme.backgroundColor,
-    height: "100%",
   },
   topNav: {
+    // flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -144,6 +164,35 @@ const theme = StyleSheet.create({
   },
   popularProjectContainer: {
     paddingLeft: 20,
-    marginBottom: 40,
+    marginBottom: 3,
+  },
+  recentProjectContainer: {
+    backgroundColor: "#003FA9",
+    borderRadius: 8,
+    marginHorizontal: 20,
+    paddingVertical: 25,
+    paddingHorizontal: 20,
+    shadowOpacity: 0.3,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+  },
+  createNewProjectContainer: {
+    marginVertical: 28,
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 120,
+  },
+  createNewProject: {
+    backgroundColor: globalTheme.colors.primary,
+    padding: 15,
+    borderRadius: 8,
+    shadowOpacity: 0.3,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
   },
 });
