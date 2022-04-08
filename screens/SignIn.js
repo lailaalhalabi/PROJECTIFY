@@ -87,7 +87,7 @@ const SignIn = () => {
           {screen === 1 && (
             <View>
               <TextField
-                style={theme.fname_textField}
+                style={theme.username_textField}
                 floatingPlaceholder
                 placeholder="First Name"
                 // onChangeText={this.onChangeText}
@@ -95,7 +95,7 @@ const SignIn = () => {
                 validate={"required"}
               />
               <TextField
-                style={theme.lname_textField}
+                style={theme.username_textField}
                 floatingPlaceholder
                 placeholder="Last Name"
                 // onChangeText={this.onChangeText}
@@ -119,7 +119,7 @@ const SignIn = () => {
                 validate={"required"}
               />
               <Button
-                style={theme.login_button}
+                style={theme.signup_button}
                 backgroundColor="#0961F5"
                 label="SIGN UP"
               />
@@ -145,18 +145,27 @@ const theme = StyleSheet.create({
     backgroundColor: globalTheme.colors.screenBackground,
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
     marginTop: 100,
     backgroundColor: "white",
+    shadowColor: globalTheme.colors.primary,
+    shadowOpacity: 0.3,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
   },
   segmented_control: {
     marginTop: 30,
     marginBottom: 60,
-    shadowOffset: { width: 15, height: 15 },
-    shadowColor: "#C4C4C4",
-    shadowOpacity: 1,
-    elevation: 3,
+    width: 120,
+    shadowColor: globalTheme.colors.primary,
+    shadowOpacity: 0.3,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
   },
   username_textField: {
     width: 250,
@@ -165,9 +174,6 @@ const theme = StyleSheet.create({
   password_textField: {
     width: 250,
     fontSize: 14,
-  },
-  fname_textField: {
-    width: 50,
   },
   login_button: {
     marginTop: 30,
@@ -178,9 +184,17 @@ const theme = StyleSheet.create({
     width: 250,
     marginTop: 10,
     borderRadius: 10,
-    shadowOffset: { width: 15, height: 15 },
-    shadowColor: "gray",
-    shadowOpacity: 1,
-    elevation: 3,
+    shadowColor: globalTheme.colors.primary,
+    shadowOpacity: 0.3,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+  },
+  signup_button: {
+    marginTop: 30,
+    marginBottom: 50,
+    width: 250,
+    borderRadius: 10,
   },
 });
