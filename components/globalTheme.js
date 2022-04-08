@@ -4,6 +4,7 @@ export const globalTheme = {
     generalGrey: "#C4C4C4",
     titleText: "#031820",
     bodyText: "#8A8C93",
+    linkText: "#6587FF",
     screenBackground: "#F5F5F5",
   },
   textSize: {

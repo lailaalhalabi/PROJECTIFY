@@ -11,7 +11,7 @@ import SignIn from "./screens/SignIn";
  */
 function App() {
   // Fake login state. Change to "true" to see all app screens.
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
     <NavigationContainer>
