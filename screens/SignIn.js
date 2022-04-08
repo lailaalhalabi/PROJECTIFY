@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import { useFonts } from "expo-font";
 
 const SignIn = () => {
@@ -16,9 +16,11 @@ const SignIn = () => {
   }
 
   return (
-    <View>
-      <Text style={theme.yourClassName}>SignIn screen</Text>
-    </View>
+    <SafeAreaView style={theme.container}>
+      <View>
+        <Text style={theme.yourClassName}>SignIn screen</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -26,6 +28,10 @@ export default SignIn;
 
 // Style for this component (similar to a CSS file)
 const theme = StyleSheet.create({
+  container: {
+    backgroundColor: "lightblue",
+    height: "100%",
+  },
   yourClassName: {
     fontSize: 50,
     fontWeight: "bold",
