@@ -1,13 +1,13 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import { globalTheme } from "../components/globalTheme";
+import TopNav from "../components/TopNav";
 
 const Onboarding = () => {
   return (
-    <SafeAreaView style={theme.container}>
-      <View>
-        <Text>Chat screen</Text>
-      </View>
-    </SafeAreaView>
+    <ScrollView style={theme.container} showsVerticalScrollIndicator={false}>
+      <TopNav screenName="Messages" />
+    </ScrollView>
   );
 };
 
@@ -16,12 +16,6 @@ export default Onboarding;
 // Style for this component (similar to a CSS file)
 const theme = StyleSheet.create({
   container: {
-    backgroundColor: "lightblue",
-    height: "100%",
-  },
-  yourClassName: {
-    // backgroundColor: "#fff",
-    // height: "100%",
-    // paddingTop: 30,
+    backgroundColor: globalTheme.colors.screenBackground,
   },
 });

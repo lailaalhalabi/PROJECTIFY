@@ -32,7 +32,6 @@ export default TopNav;
 
 const theme = StyleSheet.create({
   topNavContainer: {
-    // height: 113,
     paddingHorizontal: 20,
     paddingTop: 50,
     paddingBottom: 30,
