@@ -1,4 +1,12 @@
-import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  ScrollView,
+} from "react-native";
+import { useState } from "react";
 import {
   SegmentedControl,
   BorderRadiuses,
@@ -9,6 +17,12 @@ import { globalTheme } from "../components/globalTheme";
 import { useFonts } from "expo-font";
 
 const SignIn = () => {
+  const [screen, setScreen] = useState(0);
+
+  const onChangeIndex = (index) => {
+    setScreen(index);
+  };
+
   // Load custom fonts
   const [fontsLoaded] = useFonts({
     PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
@@ -23,48 +37,96 @@ const SignIn = () => {
 
   return (
     <SafeAreaView style={theme.container}>
-      <View style={theme.sign_container}>
-        <Image
-          style={theme.logo}
-          source={require("../assets/images/Projectify-logo.png")}
-        />
-        <SegmentedControl
-          style={theme.segmented_control}
-          segments={[{ label: "LOG IN" }, { label: "SIGN UP" }]}
-          // backgroundColor="#0961F5"
-          activeBackgroundColor="#0961F5"
-          activeColor="white"
-          inactiveColor="#C4C4C4"
-          borderRadius={BorderRadiuses.br20}
-        />
-        <TextField
-          style={theme.username_textField}
-          floatingPlaceholder
-          placeholder="Username"
-          // onChangeText={this.onChangeText}
-          floatOnFocus
-          validate={"required"}
-        />
-        <TextField
-          style={theme.password_textField}
-          floatingPlaceholder
-          placeholder="Password"
-          // onChangeText={this.onChangeText}
-          floatOnFocus
-          validate={"required"}
-        />
-        <Button
-          style={theme.login_button}
-          backgroundColor="#0961F5"
-          label="LOG ME IN"
-        />
-        <Button
-          style={theme.forgot_button}
-          backgroundColor="#FFFFFF"
-          grey30
-          label="FORGOT PASSWORD"
-        />
-      </View>
+      <ScrollView>
+        <View style={theme.sign_container}>
+          <Image
+            style={theme.logo}
+            source={require("../assets/images/Projectify-logo.png")}
+          />
+          <SegmentedControl
+            style={theme.segmented_control}
+            segments={[{ label: "LOG IN" }, { label: "SIGN UP" }]}
+            onChangeIndex={onChangeIndex}
+            // backgroundColor="#0961F5"
+            activeBackgroundColor="#0961F5"
+            activeColor="white"
+            inactiveColor="#C4C4C4"
+            borderRadius={BorderRadiuses.br20}
+          />
+          {screen === 0 && (
+            <View>
+              <TextField
+                style={theme.username_textField}
+                floatingPlaceholder
+                placeholder="Email"
+                // onChangeText={this.onChangeText}
+                floatOnFocus
+                validate={"required"}
+              />
+              <TextField
+                style={theme.password_textField}
+                floatingPlaceholder
+                placeholder="Password"
+                // onChangeText={this.onChangeText}
+                floatOnFocus
+                validate={"required"}
+              />
+              <Button
+                style={theme.login_button}
+                backgroundColor="#0961F5"
+                label="LOG ME IN"
+              />
+              <Button
+                style={theme.forgot_button}
+                backgroundColor="#FFFFFF"
+                grey30
+                label="FORGOT PASSWORD"
+              />
+            </View>
+          )}
+          {screen === 1 && (
+            <View>
+              <TextField
+                style={theme.fname_textField}
+                floatingPlaceholder
+                placeholder="First Name"
+                // onChangeText={this.onChangeText}
+                floatOnFocus
+                validate={"required"}
+              />
+              <TextField
+                style={theme.lname_textField}
+                floatingPlaceholder
+                placeholder="Last Name"
+                // onChangeText={this.onChangeText}
+                floatOnFocus
+                validate={"required"}
+              />
+              <TextField
+                style={theme.username_textField}
+                floatingPlaceholder
+                placeholder="Email"
+                // onChangeText={this.onChangeText}
+                floatOnFocus
+                validate={"required"}
+              />
+              <TextField
+                style={theme.password_textField}
+                floatingPlaceholder
+                placeholder="Password"
+                // onChangeText={this.onChangeText}
+                floatOnFocus
+                validate={"required"}
+              />
+              <Button
+                style={theme.login_button}
+                backgroundColor="#0961F5"
+                label="SIGN UP"
+              />
+            </View>
+          )}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -103,6 +165,9 @@ const theme = StyleSheet.create({
   password_textField: {
     width: 250,
     fontSize: 14,
+  },
+  fname_textField: {
+    width: 50,
   },
   login_button: {
     marginTop: 30,
