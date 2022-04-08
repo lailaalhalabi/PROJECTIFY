@@ -1,8 +1,8 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { useState } from "react";
 import { KeyboardAvoidingView, Platform } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import BottomNav from "./navigation/BottomNav";
+import BottomNav from "./components/BottomNav";
 import SignIn from "./screens/SignIn";
 
 /**

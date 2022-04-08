@@ -1,5 +1,4 @@
 import { useFonts } from "expo-font";
-import { StatusBar } from "expo-status-bar";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import PlusIcon from "../assets/icons/plus-icon.png";
@@ -24,10 +23,9 @@ const Home = () => {
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }
+
   return (
     <ScrollView style={theme.container} showsVerticalScrollIndicator={false}>
-      <StatusBar style="auto" />
-
       <View style={theme.topNav}>
         <View>
           <Text style={theme.title}>Hi Josh,</Text>
@@ -172,6 +170,7 @@ const theme = StyleSheet.create({
     marginHorizontal: 20,
     paddingVertical: 25,
     paddingHorizontal: 20,
+    shadowColor: globalTheme.colors.primary,
     shadowOpacity: 0.3,
     shadowOffset: {
       width: 0,
@@ -189,6 +188,7 @@ const theme = StyleSheet.create({
     backgroundColor: globalTheme.colors.primary,
     padding: 15,
     borderRadius: 8,
+    shadowColor: globalTheme.colors.primary,
     shadowOpacity: 0.3,
     shadowOffset: {
       width: 0,
