@@ -47,7 +47,6 @@ const SignIn = () => {
             style={theme.segmented_control}
             segments={[{ label: "LOG IN" }, { label: "SIGN UP" }]}
             onChangeIndex={onChangeIndex}
-            // backgroundColor="#0961F5"
             activeBackgroundColor="#0961F5"
             activeColor="white"
             inactiveColor="#C4C4C4"
@@ -56,20 +55,21 @@ const SignIn = () => {
           {screen === 0 && (
             <View>
               <TextField
-                style={theme.username_textField}
                 floatingPlaceholder
                 placeholder="Email"
-                // onChangeText={this.onChangeText}
                 floatOnFocus
                 validate={"required"}
+                floatingPlaceholderColor={"#0961F5"}
+                underlineColor={{ focus: "#0961F5" }}
               />
               <TextField
-                style={theme.password_textField}
                 floatingPlaceholder
                 placeholder="Password"
-                // onChangeText={this.onChangeText}
+                secureTextEntry
                 floatOnFocus
                 validate={"required"}
+                floatingPlaceholderColor={"#0961F5"}
+                underlineColor={{ focus: "#0961F5" }}
               />
               <Button
                 style={theme.login_button}
@@ -87,36 +87,37 @@ const SignIn = () => {
           {screen === 1 && (
             <View>
               <TextField
-                style={theme.username_textField}
                 floatingPlaceholder
                 placeholder="First Name"
-                // onChangeText={this.onChangeText}
                 floatOnFocus
                 validate={"required"}
+                floatingPlaceholderColor={"#0961F5"}
+                underlineColor={{ focus: "#0961F5" }}
               />
               <TextField
-                style={theme.username_textField}
                 floatingPlaceholder
                 placeholder="Last Name"
-                // onChangeText={this.onChangeText}
                 floatOnFocus
                 validate={"required"}
+                floatingPlaceholderColor={"#0961F5"}
+                underlineColor={{ focus: "#0961F5" }}
               />
               <TextField
-                style={theme.username_textField}
                 floatingPlaceholder
                 placeholder="Email"
-                // onChangeText={this.onChangeText}
                 floatOnFocus
                 validate={"required"}
+                floatingPlaceholderColor={"#0961F5"}
+                underlineColor={{ focus: "#0961F5" }}
               />
               <TextField
-                style={theme.password_textField}
                 floatingPlaceholder
+                secureTextEntry
                 placeholder="Password"
-                // onChangeText={this.onChangeText}
                 floatOnFocus
                 validate={"required"}
+                floatingPlaceholderColor={"#0961F5"}
+                underlineColor={{ focus: "#0961F5" }}
               />
               <Button
                 style={theme.signup_button}
@@ -155,6 +156,7 @@ const theme = StyleSheet.create({
       width: 0,
       height: 0,
     },
+    elevation: 5,
   },
   segmented_control: {
     marginTop: 30,
@@ -162,18 +164,11 @@ const theme = StyleSheet.create({
     width: 120,
     shadowColor: globalTheme.colors.primary,
     shadowOpacity: 0.3,
+    elevation: 5,
     shadowOffset: {
       width: 0,
       height: 0,
     },
-  },
-  username_textField: {
-    width: 250,
-    fontSize: 14,
-  },
-  password_textField: {
-    width: 250,
-    fontSize: 14,
   },
   login_button: {
     marginTop: 30,
@@ -183,9 +178,11 @@ const theme = StyleSheet.create({
   forgot_button: {
     width: 250,
     marginTop: 10,
+    marginBottom: 10,
     borderRadius: 10,
     shadowColor: globalTheme.colors.primary,
     shadowOpacity: 0.3,
+    elevation: 5,
     shadowOffset: {
       width: 0,
       height: 0,
