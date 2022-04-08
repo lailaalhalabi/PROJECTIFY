@@ -1,18 +1,17 @@
-import { StyleSheet } from "react-native";
-import { TouchableOpacity, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { globalTheme } from "../components/globalTheme";
-import HomeIcon from "../assets/icons/home.png";
-import HomeIconActive from "../assets/icons/home-active.png";
-import ProjectIcon from "../assets/icons/project.png";
-import ProjectIconActive from "../assets/icons/project-active.png";
-import ChatIcon from "../assets/icons/chat.png";
+import { Image, StyleSheet, TouchableOpacity } from "react-native";
 import ChatIconActive from "../assets/icons/chat-active.png";
-import ProfileIcon from "../assets/icons/profile.png";
+import ChatIcon from "../assets/icons/chat.png";
+import HomeIconActive from "../assets/icons/home-active.png";
+import HomeIcon from "../assets/icons/home.png";
 import ProfileIconActive from "../assets/icons/profile-active.png";
+import ProfileIcon from "../assets/icons/profile.png";
+import ProjectIconActive from "../assets/icons/project-active.png";
+import ProjectIcon from "../assets/icons/project.png";
+import { globalTheme } from "../components/globalTheme";
+import Chat from "../screens/Chat";
 import Home from "../screens/Home";
 import Projects from "../screens/Projects";
-import Chat from "../screens/Chat";
 
 const tabItems = [
   {
@@ -89,7 +88,8 @@ const theme = StyleSheet.create({
     bottom: 0,
     right: 0,
     left: 0,
-    borderRadius: 30,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
     shadowColor: globalTheme.colors.primary,
     shadowOpacity: 0.1,
   },

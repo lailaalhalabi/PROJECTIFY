@@ -1,12 +1,12 @@
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
-import UserProfileImage from "../assets/images/user6.jpg";
-import { globalTheme } from "../components/globalTheme";
-import PopularProject from "../components/PopularProject";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import Project1 from "../assets/images/project1.jpg";
 import Project2 from "../assets/images/project2.jpg";
 import Project3 from "../assets/images/project3.jpg";
+import UserProfileImage from "../assets/images/user6.jpg";
+import { globalTheme } from "../components/globalTheme";
+import PopularProject from "../components/PopularProject";
 
 const Home = () => {
   // Load custom fonts
@@ -44,7 +44,11 @@ const Home = () => {
       </View>
 
       <View style={theme.popularProjectContainer}>
-        <ScrollView horizontal={true} persistentScrollbar={false}>
+        <ScrollView
+          horizontal={true}
+          persistentScrollbar={false}
+          showsHorizontalScrollIndicator={false}
+        >
           <PopularProject image={Project2} name="Project name..." />
           <PopularProject image={Project1} name="Project name..." />
           <PopularProject image={Project3} name="Project name..." />
@@ -79,7 +83,8 @@ const theme = StyleSheet.create({
     paddingHorizontal: 30,
     paddingTop: 50,
     paddingBottom: 30,
-    borderRadius: 30,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
     shadowColor: globalTheme.colors.primary,
     shadowOpacity: 0.3,
     shadowOffset: {
