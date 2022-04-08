@@ -1,5 +1,4 @@
-import reactDom from "react-dom";
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
 import {
   SegmentedControl,
   BorderRadiuses,
@@ -7,51 +6,66 @@ import {
   Button,
 } from "react-native-ui-lib";
 import { globalTheme } from "../components/globalTheme";
+import { useFonts } from "expo-font";
 
 const SignIn = () => {
+  // Load custom fonts
+  const [fontsLoaded] = useFonts({
+    PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
+    PoppinsMedium: require("../assets/fonts/Poppins-Medium.ttf"),
+    PoppinsRegular: require("../assets/fonts/Poppins-Regular.ttf"),
+    Varela: require("../assets/fonts/Varela-Regular.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return <Text>Loading...</Text>;
+  }
+
   return (
-    <View style={theme.sign_container}>
-      <Image
-        style={theme.logo}
-        source={require("../assets/images/Projectify-logo.png")}
-      />
-      <SegmentedControl
-        style={theme.segmented_control}
-        segments={[{ label: "LOG IN" }, { label: "SIGN UP" }]}
-        // backgroundColor="#0961F5"
-        activeBackgroundColor="#0961F5"
-        activeColor="white"
-        inactiveColor="#C4C4C4"
-        borderRadius={BorderRadiuses.br20}
-      />
-      <TextField
-        style={theme.username_textField}
-        floatingPlaceholder
-        placeholder="Username"
-        // onChangeText={this.onChangeText}
-        floatOnFocus
-        validate={"required"}
-      />
-      <TextField
-        style={theme.password_textField}
-        floatingPlaceholder
-        placeholder="Password"
-        // onChangeText={this.onChangeText}
-        floatOnFocus
-        validate={"required"}
-      />
-      <Button
-        style={theme.login_button}
-        backgroundColor="#0961F5"
-        label="LOG ME IN"
-      />
-      <Button
-        style={theme.forgot_button}
-        backgroundColor="#FFFFFF"
-        grey30
-        label="FORGOT PASSWORD"
-      />
-    </View>
+    <SafeAreaView style={theme.container}>
+      <View style={theme.sign_container}>
+        <Image
+          style={theme.logo}
+          source={require("../assets/images/Projectify-logo.png")}
+        />
+        <SegmentedControl
+          style={theme.segmented_control}
+          segments={[{ label: "LOG IN" }, { label: "SIGN UP" }]}
+          // backgroundColor="#0961F5"
+          activeBackgroundColor="#0961F5"
+          activeColor="white"
+          inactiveColor="#C4C4C4"
+          borderRadius={BorderRadiuses.br20}
+        />
+        <TextField
+          style={theme.username_textField}
+          floatingPlaceholder
+          placeholder="Username"
+          // onChangeText={this.onChangeText}
+          floatOnFocus
+          validate={"required"}
+        />
+        <TextField
+          style={theme.password_textField}
+          floatingPlaceholder
+          placeholder="Password"
+          // onChangeText={this.onChangeText}
+          floatOnFocus
+          validate={"required"}
+        />
+        <Button
+          style={theme.login_button}
+          backgroundColor="#0961F5"
+          label="LOG ME IN"
+        />
+        <Button
+          style={theme.forgot_button}
+          backgroundColor="#FFFFFF"
+          grey30
+          label="FORGOT PASSWORD"
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -59,6 +73,10 @@ export default SignIn;
 
 // Style for this component (similar to a CSS file)
 const theme = StyleSheet.create({
+  container: {
+    backgroundColor: globalTheme.colors.screenBackground,
+    height: "100%",
+  },
   sign_container: {
     alignItems: "center",
     height: "100%",

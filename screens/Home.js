@@ -17,8 +17,7 @@ export default Home;
 // Style for this component (similar to a CSS file)
 const theme = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "lightblue",
     height: "100%",
-    paddingTop: 30,
   },
 });

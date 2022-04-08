@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { KeyboardAvoidingView, Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import BottomNav from "./navigation/BottomNav";
 import SignIn from "./screens/SignIn";
-
-const Stack = createNativeStackNavigator();
 
 /**
  * This is the root/entry point of the application.
