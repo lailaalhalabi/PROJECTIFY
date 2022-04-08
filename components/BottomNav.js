@@ -91,7 +91,9 @@ const theme = StyleSheet.create({
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     shadowColor: globalTheme.colors.primary,
+    elevation: 3,
     shadowOpacity: 0.1,
+    marginTop: 3,
   },
   tabButton: {
     flex: 1,

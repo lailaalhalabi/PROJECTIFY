@@ -16,9 +16,11 @@ const theme = StyleSheet.create({
   popularProject: {
     backgroundColor: "white",
     padding: 3,
+    marginVertical: 3,
     marginRight: 12,
     borderRadius: 8,
     shadowColor: globalTheme.colors.primary,
+    elevation: 3,
     shadowOpacity: 0.1,
     shadowOffset: {
       width: 0,

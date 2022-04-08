@@ -35,6 +35,7 @@ const theme = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 50,
     paddingBottom: 30,
+    marginBottom: 5,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -42,6 +43,7 @@ const theme = StyleSheet.create({
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     shadowColor: globalTheme.colors.primary,
+    elevation: 3,
     shadowOpacity: 0.3,
     shadowOffset: {
       width: 0,

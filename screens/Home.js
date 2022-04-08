@@ -104,6 +104,7 @@ const theme = StyleSheet.create({
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     shadowColor: globalTheme.colors.primary,
+    elevation: 3,
     shadowOpacity: 0.3,
     shadowOffset: {
       width: 0,
@@ -112,6 +113,7 @@ const theme = StyleSheet.create({
   },
   profileImageContainer: {
     shadowColor: globalTheme.colors.primary,
+    elevation: 3,
     shadowOpacity: 0.3,
     shadowOffset: {
       width: 0,
@@ -162,7 +164,6 @@ const theme = StyleSheet.create({
   },
   popularProjectContainer: {
     paddingLeft: 20,
-    marginBottom: 3,
   },
   recentProjectContainer: {
     backgroundColor: "#003FA9",
@@ -171,6 +172,7 @@ const theme = StyleSheet.create({
     paddingVertical: 25,
     paddingHorizontal: 20,
     shadowColor: globalTheme.colors.primary,
+    elevation: 3,
     shadowOpacity: 0.3,
     shadowOffset: {
       width: 0,
@@ -189,6 +191,7 @@ const theme = StyleSheet.create({
     padding: 15,
     borderRadius: 8,
     shadowColor: globalTheme.colors.primary,
+    elevation: 3,
     shadowOpacity: 0.3,
     shadowOffset: {
       width: 0,
