@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { globalTheme } from "./globalTheme";
 
 const PopularProject = ({ image, name }) => {
@@ -19,7 +19,7 @@ const theme = StyleSheet.create({
     marginRight: 12,
     borderRadius: 8,
     shadowColor: globalTheme.colors.primary,
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.1,
     shadowOffset: {
       width: 0,
       height: 0,
