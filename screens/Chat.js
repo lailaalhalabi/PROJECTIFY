@@ -64,5 +64,6 @@ const theme = StyleSheet.create({
   container: {
     backgroundColor: globalTheme.colors.screenBackground,
     flex: 1,
+    marginBottom: 100,
   },
 });
