@@ -1,22 +1,22 @@
+import { useFonts } from "expo-font";
+import { useState } from "react";
 import {
+  Image,
+  SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
-  Image,
-  ScrollView,
 } from "react-native";
-import { useState } from "react";
 import {
-  SegmentedControl,
   BorderRadiuses,
-  TextField,
   Button,
+  SegmentedControl,
+  TextField,
 } from "react-native-ui-lib";
 import { globalTheme } from "../components/globalTheme";
-import { useFonts } from "expo-font";
 
-const SignIn = () => {
+const SignIn = ({ handleLogin }) => {
   const [screen, setScreen] = useState(0);
 
   const onChangeIndex = (index) => {
@@ -75,6 +75,7 @@ const SignIn = () => {
                 style={theme.login_button}
                 backgroundColor="#0961F5"
                 label="LOG ME IN"
+                onPress={handleLogin}
               />
               <Button
                 style={theme.forgot_button}
@@ -123,6 +124,7 @@ const SignIn = () => {
                 style={theme.signup_button}
                 backgroundColor="#0961F5"
                 label="SIGN UP"
+                onPress={handleLogin}
               />
             </View>
           )}
