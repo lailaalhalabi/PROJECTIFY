@@ -12,6 +12,7 @@ import { globalTheme } from "../components/globalTheme";
 import Chat from "../screens/Chat";
 import Home from "../screens/Home";
 import Projects from "../screens/Projects";
+import Profile from "../screens/Profile";
 
 const tabItems = [
   {
@@ -36,7 +37,7 @@ const tabItems = [
     screen: "Profile",
     activeIcon: ProfileIconActive,
     inactiveIcon: ProfileIcon,
-    component: Chat,
+    component: Profile,
   },
 ];
 
