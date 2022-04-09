@@ -148,6 +148,8 @@ const theme = StyleSheet.create({
     marginBottom: 30,
   },
   segmentsContainer: {
+    marginLeft: 50,
+    marginRight: 50,
     backgroundColor: "white",
     borderRadius: 8,
     marginHorizontal: 20,
