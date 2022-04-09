@@ -1,10 +1,10 @@
 import { useFonts } from "expo-font";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import LeftArrow from "../assets/icons/leftArrow.png";
 import SearchIcon from "../assets/icons/search.png";
 import { globalTheme } from "./globalTheme";
 
-const TopNav = ({ screenName }) => {
+const TopNav = ({ screenName, goTo }) => {
   // Load custom fonts
   const [fontsLoaded] = useFonts({
     PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
@@ -20,7 +20,9 @@ const TopNav = ({ screenName }) => {
   return (
     <View style={theme.topNavContainer}>
       <View style={theme.topNavLeftItems}>
-        <Image style={theme.arrowIcon} source={LeftArrow} />
+        <TouchableOpacity onPress={goTo}>
+          <Image style={theme.arrowIcon} source={LeftArrow} />
+        </TouchableOpacity>
         <Text style={theme.screenName}>{screenName}</Text>
       </View>
       <Image style={theme.searchIcon} source={SearchIcon} />

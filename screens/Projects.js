@@ -1,12 +1,12 @@
+import { useState } from "react";
 import { StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { BorderRadiuses, SegmentedControl } from "react-native-ui-lib";
 import { globalTheme } from "../components/globalTheme";
-import TopNav from "../components/TopNav";
-import { SegmentedControl, BorderRadiuses } from "react-native-ui-lib";
-import { useState } from "react";
 import MyProject from "../components/MyProject";
+import TopNav from "../components/TopNav";
 
-const Projects = () => {
+const Projects = ({ navigation }) => {
   const [screen, setScreen] = useState(0);
 
   const onChangeIndex = (index) => {
@@ -15,7 +15,7 @@ const Projects = () => {
 
   return (
     <ScrollView style={theme.container} showsVerticalScrollIndicator={false}>
-      <TopNav screenName="Projects" />
+      <TopNav screenName="Projects" goTo={() => navigation.navigate("Home")} />
       <SegmentedControl
         style={theme.segmented_control}
         segments={[
