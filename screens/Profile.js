@@ -25,6 +25,12 @@ const Profile = () => {
         </View>
         <View style={theme.profileImageContainer}>
           <Image style={theme.profileImage} source={UserProfileImage} />
+          <View>
+            <Text style={theme.username}>Josh Lewis</Text>
+          </View>
+          <View>
+            <Text style={theme.score}>114,557 XP</Text>
+          </View>
         </View>
         <SegmentedControl
           style={theme.segmented_control}
@@ -140,6 +146,16 @@ const theme = StyleSheet.create({
     borderRadius: 70,
     borderWidth: 3,
     borderColor: "white",
+  },
+  username: {
+    marginTop: 30,
+    fontFamily: "PoppinsBold",
+    fontSize: 24,
+  },
+  score: {
+    fontFamily: "Varela",
+    color: "#8A8C93",
+    fontSize: 16,
   },
   segmented_control: {
     marginTop: 30,
