@@ -28,7 +28,7 @@ const theme = StyleSheet.create({
   },
   chat_container: {
     backgroundColor: "white",
-    padding: 3,
+    padding: 5,
     marginVertical: 3,
     marginRight: 12,
     marginLeft: 12,
@@ -56,7 +56,6 @@ const theme = StyleSheet.create({
     height: 60,
     width: 60,
     borderRadius: 30,
-    marginLeft: 6,
     borderWidth: 3,
     borderColor: "white",
   },
