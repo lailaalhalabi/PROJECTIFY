@@ -180,6 +180,7 @@ const theme = StyleSheet.create({
   users_ranking: {
     marginTop: 30,
     marginRight: 10,
+    fontFamily: "Varela",
   },
   users_avatar: {
     height: 50,
@@ -191,12 +192,13 @@ const theme = StyleSheet.create({
   users_username: {
     marginTop: 15,
     marginLeft: 15,
-    fontWeight: "bold",
+    fontFamily: "Varela",
   },
   users_score: {
     marginTop: 10,
     marginLeft: 15,
     fontSize: 12,
     color: "#8A8C93",
+    fontFamily: "Varela",
   },
 });

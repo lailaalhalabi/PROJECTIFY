@@ -1,8 +1,21 @@
 import { StyleSheet } from "react-native";
 import { View, Text, Image } from "react-native-ui-lib";
 import { globalTheme } from "../components/globalTheme";
+import { useFonts } from "expo-font";
 
 const ChatBox = ({ image, username, time, text }) => {
+  // Load custom fonts
+  const [fontsLoaded] = useFonts({
+    PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
+    PoppinsMedium: require("../assets/fonts/Poppins-Medium.ttf"),
+    PoppinsRegular: require("../assets/fonts/Poppins-Regular.ttf"),
+    Varela: require("../assets/fonts/Varela-Regular.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return <Text>Loading...</Text>;
+  }
+
   return (
     <View style={theme.chat_container}>
       <View style={theme.chat_avatar_container}>
@@ -68,16 +81,19 @@ const theme = StyleSheet.create({
     fontSize: 16,
     color: "#031820",
     flex: 1,
+    fontFamily: "Varela",
   },
   chat_time: {
     marginTop: 15,
     fontSize: 12,
     color: "#8A8C93",
+    fontFamily: "Varela",
   },
   chat_text: {
     marginTop: 8,
     marginLeft: 12,
     fontSize: 14,
     color: "#8A8C93",
+    fontFamily: "Varela",
   },
 });

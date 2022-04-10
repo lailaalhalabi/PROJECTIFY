@@ -77,6 +77,6 @@ const theme = StyleSheet.create({
     marginLeft: 250,
   },
   skipIcon: {
-    marginLeft: 10,
+    marginLeft: 20,
   },
 });

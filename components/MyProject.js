@@ -76,8 +76,8 @@ const theme = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: "bold",
     flex: 1,
+    fontFamily: "PoppinsBold",
   },
   rightArrow: {
     width: 30,
@@ -85,10 +85,12 @@ const theme = StyleSheet.create({
   },
   description: {
     color: "#8A8C93",
+    fontFamily: "Varela",
   },
   details: {
     color: "#8A8C93",
     marginLeft: 10,
+    fontFamily: "Varela",
   },
   alignItemsRow: {
     flexDirection: "row",
