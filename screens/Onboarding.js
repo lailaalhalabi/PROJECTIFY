@@ -32,20 +32,19 @@ const Onboarding = ({ handleSkipPress }) => {
 
   return (
     <SafeAreaView style={theme.container}>
-      <View>
-        <View style={theme.oboardingContainer}>
-          <Image style={theme.onboardingImage} source={onBoardingImage} />
-          <Text style={theme.onboardingText}>
-            Projectify helps you find like minded parters
-          </Text>
-        </View>
-        {/* Skip button */}
-        <View style={theme.skipContainer}>
-          <Image style={theme.skipIcon} source={SkipIcon} />
-          <TouchableOpacity onPress={handleSkipPress}>
-            <Text style={theme.skipText}>SKIP</Text>
-          </TouchableOpacity>
-        </View>
+      <View style={theme.oboardingContainer}>
+        <Image style={theme.onboardingImage} source={onBoardingImage} />
+        <Text style={theme.onboardingText}>
+          Projectify helps you find like minded parters
+        </Text>
+      </View>
+
+      {/* Skip button */}
+      <View style={theme.skipContainer}>
+        <Image source={SkipIcon} />
+        <TouchableOpacity onPress={handleSkipPress}>
+          <Text style={theme.skipText}>SKIP</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -57,11 +56,10 @@ export default Onboarding;
 const theme = StyleSheet.create({
   container: {
     backgroundColor: globalTheme.backgroundColor,
-    height: "100%",
   },
   oboardingContainer: {
     alignItems: "center",
-    marginTop: 100,
+    marginTop: 130,
   },
   onboardingImage: {
     width: 328,
@@ -69,20 +67,22 @@ const theme = StyleSheet.create({
   },
   onboardingText: {
     fontFamily: "PoppinsBold",
-    fontSize: 30,
+    fontSize: globalTheme.textSize.h1,
+    color: globalTheme.colors.titleText,
     marginTop: 30,
     marginLeft: 60,
     marginRight: 60,
   },
   skipContainer: {
+    marginLeft: 60,
+    marginRight: 60,
     marginTop: 200,
     flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   skipText: {
-    color: "#8A8C93",
-    marginLeft: 250,
-  },
-  skipIcon: {
-    marginLeft: 20,
+    color: globalTheme.colors.bodyText,
+    fontFamily: "Varela",
   },
 });

@@ -80,6 +80,7 @@ const theme = StyleSheet.create({
     fontSize: globalTheme.textSize.body,
     color: globalTheme.colors.titleText,
     fontFamily: "Varela",
+    marginBottom: 3,
   },
   chat_time: {
     fontSize: globalTheme.textSize.small,
