@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { BorderRadiuses, SegmentedControl } from "react-native-ui-lib";
 import { globalTheme } from "../components/globalTheme";
 import MyProject from "../components/MyProject";
+import SegmentedButtons from "../components/SegmentedButtons";
 import TopNav from "../components/TopNav";
 
 /**
@@ -12,28 +11,18 @@ import TopNav from "../components/TopNav";
  * @returns {React.ReactComponentElement}
  */
 const Projects = ({ navigation }) => {
-  const [screen, setScreen] = useState(0);
-
-  const onChangeIndex = (index) => {
-    setScreen(index);
-  };
-
   return (
     <ScrollView style={theme.container} showsVerticalScrollIndicator={false}>
       <TopNav screenName="Projects" goTo={() => navigation.navigate("Home")} />
-      <SegmentedControl
-        style={theme.segmented_control}
-        segments={[
+
+      <SegmentedButtons
+        labels={[
           { label: "ALL" },
           { label: "CURRENT" },
           { label: "COMPLETED" },
         ]}
-        onChangeIndex={onChangeIndex}
-        activeBackgroundColor="#0961F5"
-        activeColor="white"
-        inactiveColor="#C4C4C4"
-        borderRadius={BorderRadiuses.br20}
       />
+
       <MyProject
         title="Snake Robot"
         description="World’s first unique soft robot"
@@ -66,11 +55,5 @@ const theme = StyleSheet.create({
   container: {
     backgroundColor: globalTheme.colors.screenBackground,
     marginBottom: 100,
-  },
-  segmented_control: {
-    marginTop: 30,
-    marginLeft: 50,
-    marginRight: 50,
-    marginBottom: 30,
   },
 });
