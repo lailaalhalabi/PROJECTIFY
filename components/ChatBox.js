@@ -28,12 +28,10 @@ const ChatBox = ({ image, username, time, text }) => {
         <Image style={theme.chat_avatar} source={image} />
       </View>
       <View>
-        <View style={theme.chat_title}>
-          <Text style={theme.chat_username}>{username}</Text>
-          <Text style={theme.chat_time}>{time}</Text>
-        </View>
+        <Text style={theme.chat_username}>{username}</Text>
         <Text style={theme.chat_text}>{text}</Text>
       </View>
+      <Text style={theme.chat_time}>{time}</Text>
     </View>
   );
 };
@@ -47,10 +45,9 @@ const theme = StyleSheet.create({
   },
   chat_container: {
     backgroundColor: "white",
-    padding: 5,
-    marginVertical: 3,
-    marginRight: 12,
-    marginLeft: 12,
+    paddingHorizontal: 15,
+    paddingVertical: 20,
+    marginBottom: 15,
     borderRadius: 8,
     shadowColor: globalTheme.colors.primary,
     elevation: 3,
@@ -60,46 +57,41 @@ const theme = StyleSheet.create({
       height: 0,
     },
     flexDirection: "row",
+    alignItems: "center",
   },
   chat_avatar_container: {
-    padding: 10,
+    paddingRight: 12,
     shadowColor: globalTheme.colors.primary,
     elevation: 3,
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowOffset: {
       width: 0,
       height: 0,
     },
   },
   chat_avatar: {
-    height: 60,
-    width: 60,
+    height: 45,
+    width: 45,
     borderRadius: 30,
     borderWidth: 3,
     borderColor: "white",
   },
-  chat_title: {
-    flexDirection: "row",
-  },
   chat_username: {
-    marginTop: 15,
-    marginLeft: 12,
-    fontSize: 16,
-    color: "#031820",
-    flex: 1,
+    fontSize: globalTheme.textSize.body,
+    color: globalTheme.colors.titleText,
     fontFamily: "Varela",
   },
   chat_time: {
-    marginTop: 15,
-    fontSize: 12,
-    color: "#8A8C93",
+    fontSize: globalTheme.textSize.small,
+    color: globalTheme.colors.bodyText,
     fontFamily: "Varela",
+    position: "absolute",
+    top: 25,
+    right: 15,
   },
   chat_text: {
-    marginTop: 8,
-    marginLeft: 12,
-    fontSize: 14,
-    color: "#8A8C93",
+    fontSize: globalTheme.textSize.small,
+    color: globalTheme.colors.bodyText,
     fontFamily: "Varela",
   },
 });

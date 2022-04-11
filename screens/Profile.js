@@ -6,10 +6,7 @@ import user2 from "../assets/images/user2.jpg";
 import user3 from "../assets/images/user3.jpg";
 import user4 from "../assets/images/user4.jpg";
 import user5 from "../assets/images/user5.jpg";
-import {
-  default as user6,
-  default as UserProfileImage,
-} from "../assets/images/user6.jpg";
+import user6 from "../assets/images/user6.jpg";
 import { globalTheme } from "../components/globalTheme";
 import SegmentedButtons from "../components/SegmentedButtons";
 
@@ -35,7 +32,7 @@ const Profile = () => {
           <Image style={theme.settings} source={SettingsIcon} />
         </View>
         <View style={theme.profileImageContainer}>
-          <Image style={theme.profileImage} source={UserProfileImage} />
+          <Image style={theme.profileImage} source={user6} />
         </View>
         <View style={theme.profileText}>
           <Text style={theme.username}>Josh Lewis</Text>
@@ -54,7 +51,7 @@ const Profile = () => {
 
         <View style={theme.segmentsContainer}>
           {users.map((user, index) => (
-            <View style={theme.segmentElementsContainer} key={user.username}>
+            <View style={theme.segmentElementsContainer} key={index}>
               <View>
                 <Text style={theme.users_ranking}>{index}</Text>
               </View>

@@ -18,50 +18,50 @@ import TopNav from "../components/TopNav";
  */
 const Chat = ({ navigation }) => {
   return (
-    <View style={theme.container}>
-      <ScrollView>
-        <TopNav
-          screenName="Messages"
-          goTo={() => navigation.navigate("Home")}
-        />
-        <ChatBox
-          image={user1}
-          username={"Landon Clayton"}
-          time={"5 min ago"}
-          text={"Lorem ipsum dolor sit amet consectetur..."}
-        />
-        <ChatBox
-          image={user2}
-          username={"Bernice Lewis"}
-          time={"5 min ago"}
-          text={"Lorem ipsum dolor sit amet consectetur..."}
-        />
-        <ChatBox
-          image={user3}
-          username={"Amy Lucas"}
-          time={"5 min ago"}
-          text={"Lorem ipsum dolor sit amet consectetur..."}
-        />
-        <ChatBox
-          image={user4}
-          username={"Martin Garza"}
-          time={"5 min ago"}
-          text={"Lorem ipsum dolor sit amet consectetur..."}
-        />
-        <ChatBox
-          image={user5}
-          username={"Elva Moore"}
-          time={"5 min ago"}
-          text={"Lorem ipsum dolor sit amet consectetur..."}
-        />
-        <ChatBox
-          image={user6}
-          username={"Josh Lewis"}
-          time={"5 min ago"}
-          text={"Lorem ipsum dolor sit amet consectetur..."}
-        />
-      </ScrollView>
-    </View>
+    <>
+      <TopNav screenName="Messages" goTo={() => navigation.navigate("Home")} />
+
+      <View style={theme.container}>
+        <ScrollView>
+          <ChatBox
+            image={user1}
+            username={"Landon Clayton"}
+            time={"5 min ago"}
+            text={"Lorem ipsum dolor sit amet..."}
+          />
+          <ChatBox
+            image={user2}
+            username={"Bernice Lewis"}
+            time={"5 min ago"}
+            text={"Lorem ipsum dolor sit amet..."}
+          />
+          <ChatBox
+            image={user3}
+            username={"Amy Lucas"}
+            time={"5 min ago"}
+            text={"Lorem ipsum dolor sit amet..."}
+          />
+          <ChatBox
+            image={user4}
+            username={"Martin Garza"}
+            time={"5 min ago"}
+            text={"Lorem ipsum dolor sit amet..."}
+          />
+          <ChatBox
+            image={user5}
+            username={"Elva Moore"}
+            time={"5 min ago"}
+            text={"Lorem ipsum dolor sit amet..."}
+          />
+          <ChatBox
+            image={user6}
+            username={"Josh Lewis"}
+            time={"5 min ago"}
+            text={"Lorem ipsum dolor sit amet..."}
+          />
+        </ScrollView>
+      </View>
+    </>
   );
 };
 
@@ -72,6 +72,8 @@ const theme = StyleSheet.create({
   container: {
     backgroundColor: globalTheme.colors.screenBackground,
     flex: 1,
+    paddingTop: 30,
     marginBottom: 100,
+    paddingHorizontal: 25,
   },
 });
