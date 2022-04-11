@@ -16,6 +16,11 @@ import {
 } from "react-native-ui-lib";
 import { globalTheme } from "../components/globalTheme";
 
+/**
+ * This component is responsible for the Signin screen.
+ * @param {Function} handleLogin
+ * @returns {React.ReactComponentElement}
+ */
 const SignIn = ({ handleLogin }) => {
   const [screen, setScreen] = useState(0);
 
@@ -31,6 +36,7 @@ const SignIn = ({ handleLogin }) => {
     Varela: require("../assets/fonts/Varela-Regular.ttf"),
   });
 
+  // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }

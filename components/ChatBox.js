@@ -1,8 +1,13 @@
-import { StyleSheet } from "react-native";
-import { View, Text, Image } from "react-native-ui-lib";
-import { globalTheme } from "../components/globalTheme";
 import { useFonts } from "expo-font";
+import { StyleSheet } from "react-native";
+import { Image, Text, View } from "react-native-ui-lib";
+import { globalTheme } from "../components/globalTheme";
 
+/**
+ * This component displays a single 'chat box' item
+ * @param {React.ComponentProps} props
+ * @returns {React.Component}
+ */
 const ChatBox = ({ image, username, time, text }) => {
   // Load custom fonts
   const [fontsLoaded] = useFonts({
@@ -12,6 +17,7 @@ const ChatBox = ({ image, username, time, text }) => {
     Varela: require("../assets/fonts/Varela-Regular.ttf"),
   });
 
+  // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }

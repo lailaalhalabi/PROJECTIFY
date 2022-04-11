@@ -1,15 +1,19 @@
-import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
 import { useState } from "react";
-import { globalTheme } from "../components/globalTheme";
-import UserProfileImage from "../assets/images/user6.jpg";
+import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import { BorderRadiuses, SegmentedControl } from "react-native-ui-lib";
 import SettingsIcon from "../assets/icons/settings.png";
-import { SegmentedControl, BorderRadiuses } from "react-native-ui-lib";
 import user1 from "../assets/images/user1.jpg";
 import user2 from "../assets/images/user2.jpg";
 import user3 from "../assets/images/user3.jpg";
 import user4 from "../assets/images/user4.jpg";
-import { ScrollView } from "react-native-gesture-handler";
+import UserProfileImage from "../assets/images/user6.jpg";
+import { globalTheme } from "../components/globalTheme";
 
+/**
+ * This component is responsible for the Chat screen.
+ * @returns {React.ReactComponentElement}
+ */
 const Profile = () => {
   const [screen, setScreen] = useState(0);
 

@@ -1,3 +1,4 @@
+// This module takes of the global variables for colors, font-sizes, etc.
 export const globalTheme = {
   colors: {
     primary: "#0961F5",

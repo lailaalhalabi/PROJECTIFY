@@ -11,6 +11,11 @@ import ChatBox from "../components/ChatBox";
 import { globalTheme } from "../components/globalTheme";
 import TopNav from "../components/TopNav";
 
+/**
+ * This component is responsible for the Chat screen.
+ * @param {navigatorObject} navigation
+ * @returns {React.ReactComponentElement}
+ */
 const Chat = ({ navigation }) => {
   return (
     <View style={theme.container}>

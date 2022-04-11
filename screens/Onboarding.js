@@ -1,16 +1,21 @@
+import { useFonts } from "expo-font";
 import {
+  Image,
   SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  Image,
 } from "react-native";
-import { useFonts } from "expo-font";
-import { globalTheme } from "../components/globalTheme";
-import onBoardingImage from "../assets/images/vector2.png";
 import SkipIcon from "../assets/icons/skip.png";
+import onBoardingImage from "../assets/images/vector2.png";
+import { globalTheme } from "../components/globalTheme";
 
+/**
+ * This component is responsible for the Onboarding screen.
+ * @param {navigatorObject} navigation
+ * @returns {React.ReactComponentElement}
+ */
 const Onboarding = ({ handleSkipPress }) => {
   // Load custom fonts
   const [fontsLoaded] = useFonts({
@@ -20,6 +25,7 @@ const Onboarding = ({ handleSkipPress }) => {
     Varela: require("../assets/fonts/Varela-Regular.ttf"),
   });
 
+  // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }

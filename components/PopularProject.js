@@ -1,6 +1,12 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { globalTheme } from "./globalTheme";
 
+/**
+ * This component displays a single 'popular project' item
+ * @param {React.ComponentProps} image
+ * @param {React.ComponentProps} name
+ * @returns {React.Component}
+ */
 const PopularProject = ({ image, name }) => {
   return (
     <View style={theme.popularProject}>
@@ -12,6 +18,7 @@ const PopularProject = ({ image, name }) => {
 
 export default PopularProject;
 
+// Styling for 'popular projects' component
 const theme = StyleSheet.create({
   popularProject: {
     backgroundColor: "white",

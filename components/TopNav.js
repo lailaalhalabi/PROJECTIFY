@@ -4,6 +4,12 @@ import LeftArrow from "../assets/icons/leftArrow.png";
 import SearchIcon from "../assets/icons/search.png";
 import { globalTheme } from "./globalTheme";
 
+/**
+ * This component displays the general top navigation bar
+ * @param {React.ComponentProps} navigation
+ * @param {React.ComponentProps} goTo
+ * @returns {React.ReactComponentElement}
+ */
 const TopNav = ({ screenName, goTo }) => {
   // Load custom fonts
   const [fontsLoaded] = useFonts({
@@ -13,6 +19,7 @@ const TopNav = ({ screenName, goTo }) => {
     Varela: require("../assets/fonts/Varela-Regular.ttf"),
   });
 
+  // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }

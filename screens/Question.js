@@ -1,6 +1,9 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
+/**
+ * This component is responsible for the Question screen.
+ * @returns {React.ReactComponentElement}
+ */
 const Question = () => {
   return (
     <SafeAreaView style={theme.container}>

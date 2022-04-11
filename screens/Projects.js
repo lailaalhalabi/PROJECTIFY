@@ -6,6 +6,11 @@ import { globalTheme } from "../components/globalTheme";
 import MyProject from "../components/MyProject";
 import TopNav from "../components/TopNav";
 
+/**
+ * This component is responsible for the Projects screen.
+ * @param {navigatorObject} navigation
+ * @returns {React.ReactComponentElement}
+ */
 const Projects = ({ navigation }) => {
   const [screen, setScreen] = useState(0);
 

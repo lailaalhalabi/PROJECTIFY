@@ -11,9 +11,10 @@ import ProjectIcon from "../assets/icons/project.png";
 import { globalTheme } from "../components/globalTheme";
 import Chat from "../screens/Chat";
 import Home from "../screens/Home";
-import Projects from "../screens/Projects";
 import Profile from "../screens/Profile";
+import Projects from "../screens/Projects";
 
+// Array of bottom tab items
 const tabItems = [
   {
     screen: "Home",
@@ -43,6 +44,7 @@ const tabItems = [
 
 const Tab = createBottomTabNavigator();
 
+// A single tab button
 const TabButton = (props) => {
   const { item, onPress, accessibilityState } = props;
   const focused = accessibilityState.selected;
@@ -57,6 +59,10 @@ const TabButton = (props) => {
   );
 };
 
+/**
+ * This component displays the bottom tab navigation.
+ * @returns {React.ReactComponentElement}
+ */
 const BottomNav = () => {
   return (
     <Tab.Navigator
@@ -82,6 +88,7 @@ const BottomNav = () => {
 
 export default BottomNav;
 
+// Styling of the bottom nav component.
 const theme = StyleSheet.create({
   container: {
     height: 95,

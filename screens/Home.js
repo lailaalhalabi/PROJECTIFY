@@ -11,6 +11,10 @@ import { globalTheme } from "../components/globalTheme";
 import PopularProject from "../components/PopularProject";
 import RecentProject from "../components/RecentProject";
 
+/**
+ * This component is responsible for the Home screen.
+ * @returns {React.ReactComponentElement}
+ */
 const Home = () => {
   // Load custom fonts
   const [fontsLoaded] = useFonts({
@@ -20,6 +24,7 @@ const Home = () => {
     Varela: require("../assets/fonts/Varela-Regular.ttf"),
   });
 
+  // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }

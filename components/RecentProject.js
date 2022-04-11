@@ -6,6 +6,11 @@ import MemberIcon from "../assets/icons/memebers-icon.png";
 import TimeIcon from "../assets/icons/time-icon.png";
 import { globalTheme } from "./globalTheme";
 
+/**
+ * This component displays the bottom tab navigation.
+ * @param {props} props
+ * @returns {React.ReactComponentElement}
+ */
 const RecentProject = ({ title, text1, text2, text3, mainIcon }) => {
   // Load custom fonts
   const [fontsLoaded] = useFonts({
@@ -15,6 +20,7 @@ const RecentProject = ({ title, text1, text2, text3, mainIcon }) => {
     Varela: require("../assets/fonts/Varela-Regular.ttf"),
   });
 
+  // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }

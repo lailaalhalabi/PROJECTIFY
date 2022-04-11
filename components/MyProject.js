@@ -1,11 +1,16 @@
 import { useFonts } from "expo-font";
 import { Image, StyleSheet, Text, View } from "react-native";
+import { ProgressBar } from "react-native-ui-lib";
+import ConversationsIcon from "../assets/icons/conversations.png";
 import RightArrowIcon from "../assets/icons/rightArrow.png";
 import TasksIcon from "../assets/icons/tasks.png";
-import ConversationsIcon from "../assets/icons/conversations.png";
 import { globalTheme } from "./globalTheme";
-import { ProgressBar } from "react-native-ui-lib";
 
+/**
+ * This component displays a single 'my project' item
+ * @param {React.ComponentProps} props
+ * @returns {React.Component}
+ */
 const MyProject = ({
   title,
   description,
@@ -21,6 +26,7 @@ const MyProject = ({
     Varela: require("../assets/fonts/Varela-Regular.ttf"),
   });
 
+  // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }
@@ -55,6 +61,7 @@ const MyProject = ({
 
 export default MyProject;
 
+// Styling for 'my project' component
 const theme = StyleSheet.create({
   myProjectContainer: {
     backgroundColor: "white",
