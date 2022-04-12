@@ -6,15 +6,14 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TextInput,
+  TouchableOpacity,
   View,
 } from "react-native";
-import {
-  BorderRadiuses,
-  Button,
-  SegmentedControl,
-  TextField,
-} from "react-native-ui-lib";
+import LockIcon from "../assets/icons/lock.png";
+import UserIcon from "../assets/icons/username.png";
 import { globalTheme } from "../components/globalTheme";
+import SegmentedButtons from "../components/SegmentedButtons";
 
 /**
  * This component is responsible for the Signin screen.
@@ -45,93 +44,86 @@ const SignIn = ({ handleLogin }) => {
     <SafeAreaView style={theme.container}>
       <ScrollView>
         <View style={theme.sign_container}>
-          <Image
-            style={theme.logo}
-            source={require("../assets/images/Projectify-logo.png")}
-          />
-          <SegmentedControl
-            style={theme.segmented_control}
-            segments={[{ label: "LOG IN" }, { label: "SIGN UP" }]}
+          <View style={theme.logo_container}>
+            <Image
+              style={theme.logo}
+              source={require("../assets/images/Projectify-logo.png")}
+            />
+          </View>
+
+          <SegmentedButtons
+            labels={[{ label: "LOG IN" }, { label: "SIGN UP" }]}
             onChangeIndex={onChangeIndex}
-            activeBackgroundColor="#0961F5"
-            activeColor="white"
-            inactiveColor="#C4C4C4"
-            borderRadius={BorderRadiuses.br20}
           />
+
           {screen === 0 && (
-            <View>
-              <TextField
-                floatingPlaceholder
-                placeholder="Email"
-                floatOnFocus
-                validate={"required"}
-                floatingPlaceholderColor={"#0961F5"}
-                underlineColor={{ focus: "#0961F5" }}
-              />
-              <TextField
-                floatingPlaceholder
-                placeholder="Password"
-                secureTextEntry
-                floatOnFocus
-                validate={"required"}
-                floatingPlaceholderColor={"#0961F5"}
-                underlineColor={{ focus: "#0961F5" }}
-              />
-              <Button
+            <View style={theme.inputsContainer}>
+              <View style={theme.inputWrapper}>
+                <Image style={theme.textInputIcon} source={UserIcon} />
+                <TextInput
+                  placeholderTextColor={globalTheme.colors.bodyText}
+                  placeholder="Username"
+                />
+              </View>
+              <View style={theme.inputWrapper}>
+                <Image style={theme.textInputIcon} source={LockIcon} />
+                <TextInput
+                  placeholderTextColor={globalTheme.colors.bodyText}
+                  secureTextEntry={true}
+                  placeholder="Password"
+                />
+              </View>
+              <TouchableOpacity
                 style={theme.login_button}
-                backgroundColor="#0961F5"
-                label="LOG ME IN"
                 onPress={handleLogin}
-              />
-              <Button
+              >
+                <Text style={theme.inputTextStyle}>LOG ME IN</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
                 style={theme.forgot_button}
-                backgroundColor="#FFFFFF"
-                grey30
-                label="FORGOT PASSWORD"
-              />
+                onPress={handleLogin}
+              >
+                <Text style={theme.inputTextStyleDark}>FORGOT PASSWORD</Text>
+              </TouchableOpacity>
             </View>
           )}
           {screen === 1 && (
-            <View>
-              <TextField
-                floatingPlaceholder
-                placeholder="First Name"
-                floatOnFocus
-                validate={"required"}
-                floatingPlaceholderColor={"#0961F5"}
-                underlineColor={{ focus: "#0961F5" }}
-              />
-              <TextField
-                floatingPlaceholder
-                placeholder="Last Name"
-                floatOnFocus
-                validate={"required"}
-                floatingPlaceholderColor={"#0961F5"}
-                underlineColor={{ focus: "#0961F5" }}
-              />
-              <TextField
-                floatingPlaceholder
-                placeholder="Email"
-                floatOnFocus
-                validate={"required"}
-                floatingPlaceholderColor={"#0961F5"}
-                underlineColor={{ focus: "#0961F5" }}
-              />
-              <TextField
-                floatingPlaceholder
-                secureTextEntry
-                placeholder="Password"
-                floatOnFocus
-                validate={"required"}
-                floatingPlaceholderColor={"#0961F5"}
-                underlineColor={{ focus: "#0961F5" }}
-              />
-              <Button
-                style={theme.signup_button}
-                backgroundColor="#0961F5"
-                label="SIGN UP"
+            <View style={theme.inputsContainer}>
+              <View style={theme.inputWrapper}>
+                <Image style={theme.textInputIcon} source={UserIcon} />
+                <TextInput
+                  placeholderTextColor={globalTheme.colors.bodyText}
+                  placeholder="First name"
+                />
+              </View>
+              <View style={theme.inputWrapper}>
+                <Image style={theme.textInputIcon} source={UserIcon} />
+                <TextInput
+                  placeholderTextColor={globalTheme.colors.bodyText}
+                  placeholder="Last name"
+                />
+              </View>
+              <View style={theme.inputWrapper}>
+                <Image style={theme.textInputIcon} source={UserIcon} />
+                <TextInput
+                  placeholderTextColor={globalTheme.colors.bodyText}
+                  placeholder="Email"
+                />
+              </View>
+              <View style={theme.inputWrapper}>
+                <Image style={theme.textInputIcon} source={LockIcon} />
+                <TextInput
+                  placeholderTextColor={globalTheme.colors.bodyText}
+                  secureTextEntry={true}
+                  placeholder="Password"
+                />
+              </View>
+              <TouchableOpacity
+                style={theme.login_button}
                 onPress={handleLogin}
-              />
+              >
+                <Text style={theme.inputTextStyle}>SIGN UP</Text>
+              </TouchableOpacity>
             </View>
           )}
         </View>
@@ -154,22 +146,31 @@ const theme = StyleSheet.create({
     backgroundColor: globalTheme.colors.screenBackground,
   },
   logo: {
-    width: 90,
-    height: 90,
-    marginTop: 100,
+    width: 100,
+    height: 100,
+  },
+  logo_container: {
+    marginTop: 85,
+    marginBottom: 5,
+    borderRadius: 8,
     backgroundColor: "white",
     shadowColor: globalTheme.colors.primary,
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.1,
     shadowOffset: {
       width: 0,
       height: 0,
     },
     elevation: 5,
   },
-  segmented_control: {
+  inputsContainer: {
+    marginTop: 40,
+  },
+  login_button: {
+    backgroundColor: globalTheme.colors.primary,
     marginTop: 30,
-    marginBottom: 60,
-    width: 120,
+    width: 250,
+    paddingVertical: 16,
+    borderRadius: 8,
     shadowColor: globalTheme.colors.primary,
     shadowOpacity: 0.3,
     elevation: 5,
@@ -178,18 +179,28 @@ const theme = StyleSheet.create({
       height: 0,
     },
   },
-  login_button: {
-    marginTop: 30,
-    width: 250,
-    borderRadius: 10,
+  inputTextStyle: {
+    textAlign: "center",
+    color: "white",
+    fontFamily: "PoppinsBold",
+    fontSize: globalTheme.textSize.small,
+  },
+  inputTextStyleDark: {
+    textAlign: "center",
+    color: globalTheme.colors.bodyText,
+    fontFamily: "PoppinsRegular",
+    fontSize: globalTheme.textSize.small,
   },
   forgot_button: {
     width: 250,
-    marginTop: 10,
-    marginBottom: 10,
-    borderRadius: 10,
+    marginTop: 15,
+    paddingVertical: 16,
+    borderRadius: 8,
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: globalTheme.colors.generalGrey,
     shadowColor: globalTheme.colors.primary,
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.1,
     elevation: 5,
     shadowOffset: {
       width: 0,
@@ -201,5 +212,18 @@ const theme = StyleSheet.create({
     marginBottom: 50,
     width: 250,
     borderRadius: 10,
+  },
+  textInputIcon: {
+    width: 24,
+    height: 24,
+    marginRight: 10,
+  },
+  inputWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderBottomWidth: 1,
+    borderBottomColor: globalTheme.colors.generalGrey,
+    padding: 5,
+    marginBottom: 35,
   },
 });
