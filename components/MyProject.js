@@ -1,5 +1,5 @@
 import { useFonts } from "expo-font";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
 import { ProgressBar } from "react-native-ui-lib";
 import ConversationsIcon from "../assets/icons/conversations.png";
 import RightArrowIcon from "../assets/icons/rightArrow.png";
@@ -28,7 +28,11 @@ const MyProject = ({
 
   // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={theme.loadingContainer}>
+        <ActivityIndicator size="large" color={globalTheme.colors.primary} />
+      </View>
+    );
   }
 
   return (

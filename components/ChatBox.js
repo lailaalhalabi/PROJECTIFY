@@ -1,6 +1,5 @@
 import { useFonts } from "expo-font";
-import { StyleSheet } from "react-native";
-import { Image, Text, View } from "react-native-ui-lib";
+import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
 import { globalTheme } from "../components/globalTheme";
 
 /**
@@ -19,7 +18,9 @@ const ChatBox = ({ image, username, time, text }) => {
 
   // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+    <View style={theme.loadingContainer}>
+      <ActivityIndicator size="large" color={globalTheme.colors.primary} />
+    </View>;
   }
 
   return (

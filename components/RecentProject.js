@@ -1,5 +1,5 @@
 import { useFonts } from "expo-font";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
 import AwardIcon from "../assets/icons/award-icon.png";
 import BookmarkIcon from "../assets/icons/bookmark-icon.png";
 import MemberIcon from "../assets/icons/memebers-icon.png";
@@ -22,7 +22,11 @@ const RecentProject = ({ title, text1, text2, text3, mainIcon }) => {
 
   // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={theme.loadingContainer}>
+        <ActivityIndicator size="large" color={globalTheme.colors.primary} />
+      </View>
+    );
   }
 
   return (

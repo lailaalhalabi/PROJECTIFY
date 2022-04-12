@@ -1,5 +1,12 @@
 import { useFonts } from "expo-font";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  ActivityIndicator,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import PlusIcon from "../assets/icons/plus-icon.png";
 import Project1 from "../assets/images/project1.jpg";
@@ -26,7 +33,11 @@ const Home = () => {
 
   // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={theme.loadingContainer}>
+        <ActivityIndicator size="large" color={globalTheme.colors.primary} />
+      </View>
+    );
   }
 
   return (

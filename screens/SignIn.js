@@ -1,6 +1,7 @@
 import { useFonts } from "expo-font";
 import { useState } from "react";
 import {
+  ActivityIndicator,
   Image,
   SafeAreaView,
   ScrollView,
@@ -37,7 +38,11 @@ const SignIn = ({ handleLogin }) => {
 
   // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={theme.loadingContainer}>
+        <ActivityIndicator size="large" color={globalTheme.colors.primary} />
+      </View>
+    );
   }
 
   return (
@@ -225,5 +230,12 @@ const theme = StyleSheet.create({
     borderBottomColor: globalTheme.colors.generalGrey,
     padding: 5,
     marginBottom: 35,
+  },
+  loadingContainer: {
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
   },
 });

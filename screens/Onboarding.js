@@ -1,5 +1,6 @@
 import { useFonts } from "expo-font";
 import {
+  ActivityIndicator,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -27,7 +28,11 @@ const Onboarding = ({ handleSkipPress }) => {
 
   // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={theme.loadingContainer}>
+        <ActivityIndicator size="large" color={globalTheme.colors.primary} />
+      </View>
+    );
   }
 
   return (

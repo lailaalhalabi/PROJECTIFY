@@ -1,5 +1,12 @@
 import { useFonts } from "expo-font";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  ActivityIndicator,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import LeftArrow from "../assets/icons/leftArrow.png";
 import SearchIcon from "../assets/icons/search.png";
 import { globalTheme } from "./globalTheme";
@@ -21,7 +28,11 @@ const TopNav = ({ screenName, goTo }) => {
 
   // Show 'loading...' if fonts are not loaded
   if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={theme.loadingContainer}>
+        <ActivityIndicator size="large" color={globalTheme.colors.primary} />
+      </View>
+    );
   }
 
   return (
