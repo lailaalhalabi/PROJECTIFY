@@ -46,10 +46,12 @@ const Onboarding = ({ handleSkipPress }) => {
 
       {/* Skip button */}
       <View style={theme.skipContainer}>
-        <Image source={SkipIcon} />
-        <TouchableOpacity onPress={handleSkipPress}>
-          <Text style={theme.skipText}>SKIP</Text>
-        </TouchableOpacity>
+        <View style={theme.skipInnerContainer}>
+          <Image source={SkipIcon} />
+          <TouchableOpacity onPress={handleSkipPress}>
+            <Text style={theme.skipText}>SKIP</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -61,6 +63,7 @@ export default Onboarding;
 const theme = StyleSheet.create({
   container: {
     backgroundColor: globalTheme.backgroundColor,
+    height: "100%",
   },
   oboardingContainer: {
     alignItems: "center",
@@ -79,9 +82,12 @@ const theme = StyleSheet.create({
     marginRight: 60,
   },
   skipContainer: {
-    marginLeft: 60,
-    marginRight: 60,
-    marginTop: 200,
+    position: "absolute",
+    bottom: 60,
+    left: 40,
+    right: 40,
+  },
+  skipInnerContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

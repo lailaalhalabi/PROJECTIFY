@@ -22,7 +22,7 @@ const Chat = ({ navigation }) => {
       <TopNav screenName="Messages" goTo={() => navigation.navigate("Home")} />
 
       <View style={theme.container}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <ChatBox
             image={user1}
             username={"Landon Clayton"}
@@ -72,8 +72,8 @@ const theme = StyleSheet.create({
   container: {
     backgroundColor: globalTheme.colors.screenBackground,
     flex: 1,
-    paddingTop: 30,
+    paddingTop: 20,
     marginBottom: 100,
-    paddingHorizontal: 25,
+    paddingHorizontal: 20,
   },
 });

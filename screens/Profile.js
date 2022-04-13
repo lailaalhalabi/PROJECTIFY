@@ -27,7 +27,7 @@ const users = [
 const Profile = () => {
   return (
     <SafeAreaView style={theme.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={theme.settingsContainer}>
           <Image style={theme.settings} source={SettingsIcon} />
         </View>

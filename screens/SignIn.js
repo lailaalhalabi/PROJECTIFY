@@ -199,6 +199,7 @@ const theme = StyleSheet.create({
   forgot_button: {
     width: 250,
     marginTop: 15,
+    marginBottom: 5,
     paddingVertical: 16,
     borderRadius: 8,
     backgroundColor: "white",
@@ -206,7 +207,7 @@ const theme = StyleSheet.create({
     borderColor: globalTheme.colors.generalGrey,
     shadowColor: globalTheme.colors.primary,
     shadowOpacity: 0.1,
-    elevation: 5,
+    elevation: 3,
     shadowOffset: {
       width: 0,
       height: 0,
