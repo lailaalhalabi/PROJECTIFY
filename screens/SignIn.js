@@ -18,10 +18,10 @@ import SegmentedButtons from "../components/SegmentedButtons";
 
 /**
  * This component is responsible for the Signin screen.
- * @param {Function} handleLogin
+ * @param {navigatorObject} navigation
  * @returns {React.ReactComponentElement}
  */
-const SignIn = ({ handleLogin }) => {
+const SignIn = ({ navigation }) => {
   const [screen, setScreen] = useState(0);
 
   const onChangeIndex = (index) => {
@@ -80,13 +80,13 @@ const SignIn = ({ handleLogin }) => {
               </View>
               <TouchableOpacity
                 style={theme.login_button}
-                onPress={handleLogin}
+                onPress={() => navigation.navigate("UserGuide")}
               >
                 <Text style={theme.inputTextStyle}>LOG ME IN</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={theme.forgot_button}
-                onPress={handleLogin}
+                onPress={() => navigation.navigate("UserGuide")}
               >
                 <Text style={theme.inputTextStyleDark}>FORGOT PASSWORD</Text>
               </TouchableOpacity>
@@ -125,7 +125,7 @@ const SignIn = ({ handleLogin }) => {
               </View>
               <TouchableOpacity
                 style={theme.login_button}
-                onPress={handleLogin}
+                onPress={() => navigation.navigate("UserGuide")}
               >
                 <Text style={theme.inputTextStyle}>SIGN UP</Text>
               </TouchableOpacity>

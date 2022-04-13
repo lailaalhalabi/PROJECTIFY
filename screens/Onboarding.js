@@ -17,7 +17,7 @@ import { globalTheme } from "../components/globalTheme";
  * @param {navigatorObject} navigation
  * @returns {React.ReactComponentElement}
  */
-const Onboarding = ({ handleSkipPress }) => {
+const Onboarding = ({ navigation }) => {
   // Load custom fonts
   const [fontsLoaded] = useFonts({
     PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
@@ -48,7 +48,7 @@ const Onboarding = ({ handleSkipPress }) => {
       <View style={theme.skipContainer}>
         <View style={theme.skipInnerContainer}>
           <Image source={SkipIcon} />
-          <TouchableOpacity onPress={handleSkipPress}>
+          <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
             <Text style={theme.skipText}>SKIP</Text>
           </TouchableOpacity>
         </View>
@@ -62,7 +62,7 @@ export default Onboarding;
 // Style for this component (similar to a CSS file)
 const theme = StyleSheet.create({
   container: {
-    backgroundColor: globalTheme.backgroundColor,
+    backgroundColor: "white",
     height: "100%",
   },
   oboardingContainer: {

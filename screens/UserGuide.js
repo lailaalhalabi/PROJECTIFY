@@ -13,8 +13,8 @@ import SearchIcon from "../assets/icons/search.png";
 import Category from "../components/Category";
 import { globalTheme } from "../components/globalTheme";
 
-// Mock categories.
-const categories = [
+// Categories used by UserGuide screen
+export const categories = [
   {
     categoryName: "Web Frontend",
     categoryImage: require("../assets/images/vector5.png"),
@@ -51,7 +51,7 @@ const categories = [
  * @param {navigatorObject} navigation
  * @returns {React.ReactComponentElement}
  */
-const UserGuide = () => {
+const UserGuide = ({ navigation }) => {
   // Load custom fonts
   const [fontsLoaded] = useFonts({
     PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
@@ -88,6 +88,7 @@ const UserGuide = () => {
             categoryName={item.categoryName}
             categoryImage={item.categoryImage}
             key={index}
+            navigation={navigation}
           />
         ))}
       </View>

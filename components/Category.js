@@ -1,11 +1,14 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { globalTheme } from "./globalTheme";
 
-const Category = ({ categoryImage, categoryName, index }) => {
+/**
+ * This component displays a single 'Category' item on the UserGuide screen
+ * @param {React.ComponentProps} props
+ * @returns {React.Component}
+ */
+const Category = ({ categoryImage, categoryName, index, navigation }) => {
   return (
-    <TouchableOpacity
-    // onPress={() => navigation.navigate("Home")}
-    >
+    <TouchableOpacity onPress={() => navigation.navigate("BottomNav")}>
       <View
         style={[
           theme.container,
@@ -45,7 +48,7 @@ const theme = StyleSheet.create({
   categoryImage: {
     width: "100%",
     height: 105,
-    marginBottom: 5,
+    marginBottom: 8,
   },
   categoryTitle: {
     fontFamily: "Varela",

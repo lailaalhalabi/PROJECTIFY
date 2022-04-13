@@ -14,8 +14,8 @@ import Home from "../screens/Home";
 import Profile from "../screens/Profile";
 import Projects from "../screens/Projects";
 
-// Array of bottom tab items
-const tabItems = [
+// Array of tab items used by the bottom Tab navigator
+export const tabItems = [
   {
     screen: "Home",
     activeIcon: HomeIconActive,
