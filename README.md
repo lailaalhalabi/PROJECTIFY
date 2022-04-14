@@ -44,3 +44,40 @@ This project aims to create a collaborative project-based learning platform that
 
 Read the step-by-step instruction from Expo [
 here](https://docs.expo.dev/get-started/installation/).
+<br/>
+
+## Code structure:
+
+```
+PROJECTIFY
+│
+├─ App.js
+│
+├─ assets
+│  ├─ fonts
+│  ├─ icons
+│  └─ images
+│
+├─ components
+│  ├─ BottomNav.js
+│  ├─ Category.js
+│  ├─ ChatBox.js
+│  ├─ MyProject.js
+│  ├─ PopularProject.js
+│  ├─ RecentProject.js
+│  ├─ SegmentedButtons.js
+│  ├─ TopNav.js
+│  └─ globalTheme.js
+│
+├─ screens
+│  ├─ Chat.js
+│  ├─ Home.js
+│  ├─ Onboarding.js
+│  ├─ Profile.js
+│  ├─ Projects.js
+│  ├─ SignIn.js
+│  └─ UserGuide.js
+│
+└─ yarn.lock
+
+```
