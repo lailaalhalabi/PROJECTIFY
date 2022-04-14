@@ -127,7 +127,8 @@ const theme = StyleSheet.create({
     marginRight: 10,
   },
   categoryContainer: {
-    marginLeft: 35,
+    marginLeft: "4%",
+    justifyContent: "center",
     flexDirection: "row",
     flexWrap: "wrap",
     marginBottom: 100,
