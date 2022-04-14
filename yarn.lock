@@ -1771,10 +1771,10 @@
   dependencies:
     "lodash" "^4.17.14"
 
-"async@^3.2.3":
-  "integrity" "sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g=="
-  "resolved" "https://registry.npmjs.org/async/-/async-3.2.3.tgz"
-  "version" "3.2.3"
+"async@^3.2.2":
+  "integrity" "sha512-H0E+qZaDEfx/FY4t7iLRv1W2fFI6+pyCeTw1uN20AQPiwqwM6ojPxHxdLv4z8hi2DtnW9BOckSspLucW7pIE5g=="
+  "resolved" "https://registry.npmjs.org/async/-/async-3.2.2.tgz"
+  "version" "3.2.2"
 
 "at-least-node@^1.0.0":
   "integrity" "sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg=="
@@ -2430,11 +2430,6 @@
     "hyphenate-style-name" "^1.0.2"
     "isobject" "^3.0.1"
 
-"data-uri-to-buffer@^4.0.0":
-  "integrity" "sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA=="
-  "resolved" "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.0.tgz"
-  "version" "4.0.0"
-
 "dayjs@^1.8.15":
   "integrity" "sha512-JLC809s6Y948/FuCZPm5IX8rRhQwOiyMb2TfVVQEixG7P8Lm/gt5S7yoQZmC8x1UehI9Pb7sksEt4xx14m+7Ug=="
   "resolved" "https://registry.npmjs.org/dayjs/-/dayjs-1.11.0.tgz"
@@ -2899,14 +2894,6 @@
   dependencies:
     "array-back" "^1.0.4"
 
-"fetch-blob@^3.1.2", "fetch-blob@^3.1.4":
-  "integrity" "sha512-N64ZpKqoLejlrwkIAnb9iLSA3Vx/kjgzpcDhygcqJ2KKjky8nCgUQ+dzXtbrLaWZGZNmNfQTsiQ0weZ1svglHg=="
-  "resolved" "https://registry.npmjs.org/fetch-blob/-/fetch-blob-3.1.5.tgz"
-  "version" "3.1.5"
-  dependencies:
-    "node-domexception" "^1.0.0"
-    "web-streams-polyfill" "^3.0.3"
-
 "fill-range@^4.0.0":
   "integrity" "sha1-1USBHUKPmOsGpj3EAtJAPDKMOPc="
   "resolved" "https://registry.npmjs.org/fill-range/-/fill-range-4.0.0.tgz"
@@ -3009,13 +2996,6 @@
   "integrity" "sha1-gQaNKVqBQuwKxybG4iAMMPttXoA="
   "resolved" "https://registry.npmjs.org/for-in/-/for-in-1.0.2.tgz"
   "version" "1.0.2"
-
-"formdata-polyfill@^4.0.10":
-  "integrity" "sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g=="
-  "resolved" "https://registry.npmjs.org/formdata-polyfill/-/formdata-polyfill-4.0.10.tgz"
-  "version" "4.0.10"
-  dependencies:
-    "fetch-blob" "^3.1.2"
 
 "fragment-cache@^0.2.1":
   "integrity" "sha1-QpD60n8T6Jvn8zeZxrxaCr//DRk="
@@ -4360,11 +4340,6 @@
   dependencies:
     "minimatch" "^3.0.2"
 
-"node-domexception@^1.0.0":
-  "integrity" "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ=="
-  "resolved" "https://registry.npmjs.org/node-domexception/-/node-domexception-1.0.0.tgz"
-  "version" "1.0.0"
-
 "node-fetch@^1.0.1":
   "integrity" "sha512-NhZ4CsKx7cYm2vSrBAr2PvFOe6sWDf0UYLRqA6svUYg7+/TSfVAu49jYC4BvQ4Sms9SZgdqGBgroqfDhJdTyKQ=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-1.7.3.tgz"
@@ -4373,30 +4348,7 @@
     "encoding" "^0.1.11"
     "is-stream" "^1.0.1"
 
-"node-fetch@^2.2.0":
-  "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
-  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
-  "version" "2.6.7"
-  dependencies:
-    "whatwg-url" "^5.0.0"
-
-"node-fetch@^2.6.0":
-  "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
-  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
-  "version" "2.6.7"
-  dependencies:
-    "whatwg-url" "^5.0.0"
-
-"node-fetch@^3.2.3":
-  "integrity" "sha512-AXP18u4pidSZ1xYXRDPY/8jdv3RAozIt/WLNR/MBGZAz+xjtlr90RvCnsvHQRiXyWliZF/CpytExp32UU67/SA=="
-  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-3.2.3.tgz"
-  "version" "3.2.3"
-  dependencies:
-    "data-uri-to-buffer" "^4.0.0"
-    "fetch-blob" "^3.1.4"
-    "formdata-polyfill" "^4.0.10"
-
-"node-fetch@2.6.7":
+"node-fetch@^2.2.0", "node-fetch@^2.6.0", "node-fetch@^2.6.7", "node-fetch@2.6.7":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
   "version" "2.6.7"
@@ -6003,11 +5955,6 @@
   "version" "1.0.1"
   dependencies:
     "defaults" "^1.0.3"
-
-"web-streams-polyfill@^3.0.3":
-  "integrity" "sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q=="
-  "resolved" "https://registry.npmjs.org/web-streams-polyfill/-/web-streams-polyfill-3.2.1.tgz"
-  "version" "3.2.1"
 
 "webidl-conversions@^3.0.0":
   "integrity" "sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE="
